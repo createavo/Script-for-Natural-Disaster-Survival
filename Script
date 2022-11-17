@@ -1,0 +1,179 @@
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+
+local Window = Library.CreateLib("XickNak - Natural Disaster Survival", "RJTheme3")
+
+local Tab = Window:NewTab("All")
+
+
+local Section = Tab:NewSection("Island")
+
+
+Section:NewButton("teleport", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-55.5, 65.2000008, 98, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+end)
+
+
+local Section = Tab:NewSection("Lobby")
+
+
+Section:NewButton("teleport", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-269.621368, 190.999954, 302.266388, -0.965929747, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, -0.965929747)
+end)
+
+
+local Section = Tab:NewSection("Speed")
+
+
+Section:NewSlider("Speed", "SliderInfo", 500, 0, function(s) -- 500 (Макс. значение) | 0 (Мин. значение)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
+local Section = Tab:NewSection("Jump")
+
+
+Section:NewSlider("JumpPower", "SliderInfo", 500, 0, function(s) -- 500 (Макс. значение) | 0 (Мин. значение)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+local Section = Tab:NewSection("Gravity")
+
+
+Section:NewSlider("Gravity", "SliderInfo", 196.2, 0, function(s) -- 500 (Макс. значение) | 0 (Мин. значение)
+    game:GetService("Workspace").Gravity = s
+end)
+
+
+local Section = Tab:NewSection("Un Fall Damage")
+
+
+Section:NewButton("Destroy Script", "ButtonInfo", function()
+    if game.Players.LocalPlayer.Character.FallDamageScript then
+		game.Players.LocalPlayer.Character.FallDamageScript:Destroy()
+	end
+end)
+
+
+local Section = Tab:NewSection("Un Lava")
+
+
+Section:NewButton("Destroy Script", "ButtonInfo", function()
+    if game:GetService("Workspace").Structure.Lava then
+		while game:GetService("RunService").RenderStepped:wait() do
+		game:GetService("Workspace").Structure.Lava:Destroy()
+		end
+	end
+end)
+
+
+local Section = Tab:NewSection("Un Acid Rain")
+
+
+Section:NewButton("Destroy Script", "ButtonInfo", function()
+    while game:GetService("RunService").RenderStepped:wait() do
+	game:GetService("Workspace").Structure.AcidRain:Destroy()
+	end
+end)
+
+
+local Section = Tab:NewSection("Un Tornado")
+
+
+Section:NewButton("Destroy Tornado", "ButtonInfo", function()
+    while game:GetService("RunService").RenderStepped:wait() do
+	game:GetService("Workspace").Structure.TornadoPart:Destroy()
+	end
+end)
+
+
+local Section = Tab:NewSection("Un Cloud")
+
+
+Section:NewButton("Destroy Part", "ButtonInfo", function()
+    game:GetService("Workspace").Structure.Cloud:Destroy()
+end)
+
+
+local Section = Tab:NewSection("Un Virus Particles")
+
+
+Section:NewButton("Destroy", "ButtonInfo", function()
+    while game:GetService("RunService").RenderStepped:wait() do
+	game:GetService("Workspace").Structure.VirusParticles:Destroy()
+	end
+end)
+
+
+local Section = Tab:NewSection("Un Meteors")
+
+
+Section:NewButton("Destroy", "ButtonInfo", function()
+    while game:GetService("RunService").RenderStepped:wait() do
+	game:GetService("Workspace").Structure.MeteorFolder:Destroy()
+	game:GetService("Workspace").Structure.MeteorTemplate:Destroy()
+	end
+end)
+
+
+local Section = Tab:NewSection("Un Marts")
+
+
+Section:NewButton("Destroy Marts", "ButtonInfo", function()
+    game:GetService("Workspace").Structure["Lucky Mart"]:Destroy()
+end)
+
+
+local Section = Tab:NewSection("Un Dust")
+
+
+Section:NewButton("Destroy", "ButtonInfo", function()
+    while game:GetService("RunService").RenderStepped:wait() do
+	game:GetService("Workspace").Structure.Dust:Destroy()
+	end
+end)
+
+
+local Section = Tab:NewSection("Un Tsunami")
+
+
+Section:NewButton("Destroy Tsunami", "ButtonInfo", function()
+    game:GetService("Workspace").Structure.TsunamiWave:Destroy()
+end)
+
+
+local Section = Tab:NewSection("Un Flood")
+
+
+Section:NewButton("Destroy Flood", "ButtonInfo", function()
+    game:GetService("Workspace").Structure.FloodLevel:Destroy()
+end)
+
+
+local Section = Tab:NewSection("Farm")
+
+
+Section:NewToggle("ToggleText", "ToggleInfo", function(state)
+    if state then
+		while game:GetService("RunService").RenderStepped:wait() do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island.LowerRocks.CFrame
+		game.Players.LocalPlayer.Character.LowerTorso.Anchored = true
+		game.Players.LocalPlayer.Character.FallDamageScript:Destroy()
+		end
+    else
+		game.Players.LocalPlayer.Character.LowerTorso.Anchored = false
+		wait(1)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-269.621368, 190.999954, 302.266388, -0.965929747, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, -0.965929747)
+    end
+end)
+
+
+local Section = Tab:NewSection("Receiving an achievement: Close the call")
+
+
+Section:NewButton("Activate", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 5
+	wait(0.2)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-269.621368, 190.999954, 302.266388, -0.965929747, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, -0.965929747)
+end)
